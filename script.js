@@ -5,7 +5,7 @@
    ========================================================================== */
 
 /* >>> TROQUE AQUI pelo número de vocês (55 + DDD + número, só dígitos) <<< */
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5518997281973';
 
 /* ---------- 1) Links do WhatsApp ---------- */
 document.querySelectorAll('[data-wa]').forEach((el) => {
