@@ -274,6 +274,11 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.08
 .footer-nav { display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: center; }
 .footer-nav a { font-weight: 500; font-size: 15px; color: var(--muted); transition: color .2s; }
 .footer-nav a:hover { color: var(--blue); }
+.footer-ig { display: inline-flex; align-items: center; gap: 8px; }
+.footer-ig .ico { width: 18px; height: 18px; fill: currentColor; }
+.cta-ig { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; margin-left: 12px; color: #fff; font-weight: 600; padding: 14px 22px; border: 2px solid rgba(255,255,255,.7); border-radius: 999px; transition: background .2s, color .2s; }
+.cta-ig:hover { background: #fff; color: var(--blue); }
+.cta-ig .ico { width: 20px; height: 20px; fill: currentColor; }
 .copy { grid-column: 1 / -1; font-size: 14px; color: var(--muted); padding-top: 22px; border-top: 1px solid var(--line); }
 .site-footer { padding-bottom: 96px; }
 
