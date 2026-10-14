@@ -269,17 +269,18 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.08
 
 /* ---------- Rodapé ---------- */
 .site-footer { border-top: 1px solid var(--line); padding: 44px 0 40px; background: var(--tint); }
-.footer-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px 48px; }
+.footer-inner { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 24px 48px; }
 .footer-logo img { height: 74px; width: auto; mix-blend-mode: multiply; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: center; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: flex-end; }
 .footer-nav a { font-weight: 500; font-size: 15px; color: var(--muted); transition: color .2s; }
 .footer-nav a:hover { color: var(--blue); }
 .footer-ig { display: inline-flex; align-items: center; gap: 8px; }
 .footer-ig .ico { width: 18px; height: 18px; fill: currentColor; }
-.cta-ig { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; margin-left: 12px; color: #fff; font-weight: 600; padding: 14px 22px; border: 2px solid rgba(255,255,255,.7); border-radius: 999px; transition: background .2s, color .2s; }
-.cta-ig:hover { background: #fff; color: var(--blue); }
-.cta-ig .ico { width: 20px; height: 20px; fill: currentColor; }
-.copy { grid-column: 1 / -1; font-size: 14px; color: var(--muted); padding-top: 22px; border-top: 1px solid var(--line); }
+.footer-bottom { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px 24px; padding-top: 22px; border-top: 1px solid var(--line); }
+.footer-social { display: flex; align-items: center; gap: 12px; }
+.footer-social a { font-weight: 500; font-size: 14px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; transition: color .2s, border-color .2s, transform .2s; }
+.footer-social a:hover { color: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
+.copy { font-size: 14px; color: var(--muted); }
 .site-footer { padding-bottom: 96px; }
 
 /* ---------- WhatsApp flutuante ---------- */
