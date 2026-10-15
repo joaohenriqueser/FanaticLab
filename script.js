@@ -238,6 +238,7 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
   if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const phrases = [
+    'nossa impressão.',
     'impressa em 3D.',
     'vira realidade.',
     'do papel à mão.',

@@ -1,389 +1,633 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FanaticLab 3D | Impressão 3D personalizada: brindes, decoração e peças sob medida</title>
-  <meta name="description" content="Impressão 3D personalizada feita com capricho: brindes para empresas, decoração, action figures e peças sob medida. Peça seu orçamento pelo WhatsApp ou compre na Shopee e no Mercado Livre.">
+  <meta name="description"
+    content="Impressão 3D personalizada feita com capricho: brindes para empresas, decoração, action figures e peças sob medida. Peça seu orçamento pelo WhatsApp ou compre na Shopee e no Mercado Livre.">
   <meta property="og:title" content="FanaticLab 3D | Impressão 3D personalizada">
-  <meta property="og:description" content="Brindes, decoração, colecionáveis e peças sob medida. Peça pelo WhatsApp ou compre pronto na Shopee e no Mercado Livre.">
+  <meta property="og:description"
+    content="Brindes, decoração, colecionáveis e peças sob medida. Peça pelo WhatsApp ou compre pronto na Shopee e no Mercado Livre.">
   <meta property="og:image" content="images/hero.jpg">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/png" href="images/logo-mark.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
+
 <body>
 
-<!-- Gradientes compartilhados (sombreado 3D dos objetos) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="g-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9CC2FF"/><stop offset="1" stop-color="#4C8DFF"/></linearGradient>
-    <linearGradient id="g-left" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2F80FF"/><stop offset="1" stop-color="#0A55D6"/></linearGradient>
-    <linearGradient id="g-right" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#434A53"/><stop offset="1" stop-color="#1D2126"/></linearGradient>
-    <linearGradient id="g-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F88FF"/><stop offset="1" stop-color="#0A55D6"/></linearGradient>
-    <linearGradient id="g-cyl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#063A94"/><stop offset=".32" stop-color="#3A8BFF"/><stop offset=".6" stop-color="#0A63F5"/><stop offset="1" stop-color="#052E78"/></linearGradient>
-    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3A4048"/><stop offset=".4" stop-color="#8E97A4"/><stop offset="1" stop-color="#262B31"/></linearGradient>
-    <radialGradient id="g-blue" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#6AA4FF"/><stop offset=".55" stop-color="#0A63F5"/><stop offset="1" stop-color="#0848B8"/></radialGradient>
-    <radialGradient id="g-white" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#E4E9F2"/><stop offset="1" stop-color="#AEB8C7"/></radialGradient>
-    <radialGradient id="g-dark" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#5E6670"/><stop offset=".55" stop-color="#2C3138"/><stop offset="1" stop-color="#14171B"/></radialGradient>
-  </defs>
-</svg>
+  <!-- Gradientes compartilhados (sombreado 3D dos objetos) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="g-top" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#9CC2FF" />
+        <stop offset="1" stop-color="#4C8DFF" />
+      </linearGradient>
+      <linearGradient id="g-left" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#2F80FF" />
+        <stop offset="1" stop-color="#0A55D6" />
+      </linearGradient>
+      <linearGradient id="g-right" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#434A53" />
+        <stop offset="1" stop-color="#1D2126" />
+      </linearGradient>
+      <linearGradient id="g-front" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3F88FF" />
+        <stop offset="1" stop-color="#0A55D6" />
+      </linearGradient>
+      <linearGradient id="g-cyl" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#063A94" />
+        <stop offset=".32" stop-color="#3A8BFF" />
+        <stop offset=".6" stop-color="#0A63F5" />
+        <stop offset="1" stop-color="#052E78" />
+      </linearGradient>
+      <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#3A4048" />
+        <stop offset=".4" stop-color="#8E97A4" />
+        <stop offset="1" stop-color="#262B31" />
+      </linearGradient>
+      <radialGradient id="g-blue" cx=".35" cy=".3" r=".85">
+        <stop offset="0" stop-color="#6AA4FF" />
+        <stop offset=".55" stop-color="#0A63F5" />
+        <stop offset="1" stop-color="#0848B8" />
+      </radialGradient>
+      <radialGradient id="g-white" cx=".35" cy=".3" r=".9">
+        <stop offset="0" stop-color="#ffffff" />
+        <stop offset=".6" stop-color="#E4E9F2" />
+        <stop offset="1" stop-color="#AEB8C7" />
+      </radialGradient>
+      <radialGradient id="g-dark" cx=".35" cy=".3" r=".9">
+        <stop offset="0" stop-color="#5E6670" />
+        <stop offset=".55" stop-color="#2C3138" />
+        <stop offset="1" stop-color="#14171B" />
+      </radialGradient>
+    </defs>
+  </svg>
 
-<!-- Ícones reutilizáveis -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-</svg>
+  <!-- Ícones reutilizáveis -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-ig" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+        d="M5 12h14M13 6l6 6-6 6" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"
+        d="M5 12.5l4.5 4.5L19 7.5" />
+    </symbol>
+  </svg>
 
-<div class="page" id="page">
+  <div class="page" id="page">
 
-  <!-- Formas geométricas discretas de fundo -->
-  <div class="deco" aria-hidden="true">
-    <!-- Topo / Hero -->
-    <svg class="g g-a" style="top:2%;left:8%;width:38px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="7"/></svg>
-    <svg class="g g-b" style="top:5%;left:45%;width:24px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-d" style="top:4%;left:88%;width:36px" viewBox="0 0 40 40"><polygon points="20,4 34,12 34,28 20,36 6,28 6,12"/></svg>
-    <svg class="g g-a" style="top:9%;left:3%;width:42px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34"/></svg>
-    <svg class="g g-c" style="top:12%;left:38%;width:20px" viewBox="0 0 40 40"><path d="M20 6v28M6 20h28"/></svg>
-    <svg class="g g-b" style="top:14%;left:93%;width:32px" viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(45 20 20)"/></svg>
-    <svg class="g g-fill" style="top:18%;left:11%;width:14px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-e" style="top:17%;left:82%;width:34px" viewBox="0 0 40 40"><polygon points="20,5 34,13 20,21 6,13"/><polygon points="6,13 20,21 20,35 6,27"/><polygon points="34,13 20,21 20,35 34,27"/></svg>
+    <!-- Formas geométricas discretas de fundo -->
+    <div class="deco" aria-hidden="true">
+      <!-- Topo / Hero -->
+      <svg class="g g-a" style="top:2%;left:8%;width:38px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+        <circle cx="20" cy="20" r="7" />
+      </svg>
+      <svg class="g g-b" style="top:5%;left:45%;width:24px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-d" style="top:4%;left:88%;width:36px" viewBox="0 0 40 40">
+        <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" />
+      </svg>
+      <svg class="g g-a" style="top:9%;left:3%;width:42px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" />
+      </svg>
+      <svg class="g g-c" style="top:12%;left:38%;width:20px" viewBox="0 0 40 40">
+        <path d="M20 6v28M6 20h28" />
+      </svg>
+      <svg class="g g-b" style="top:14%;left:93%;width:32px" viewBox="0 0 40 40">
+        <rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(45 20 20)" />
+      </svg>
+      <svg class="g g-fill" style="top:18%;left:11%;width:14px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-e" style="top:17%;left:82%;width:34px" viewBox="0 0 40 40">
+        <polygon points="20,5 34,13 20,21 6,13" />
+        <polygon points="6,13 20,21 20,35 6,27" />
+        <polygon points="34,13 20,21 20,35 34,27" />
+      </svg>
 
-    <!-- Transição / Brindes -->
-    <svg class="g g-c" style="top:22%;left:4%;width:30px" viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(20 20 20)"/></svg>
-    <svg class="g g-a" style="top:24%;left:92%;width:36px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34" transform="rotate(180 20 20)"/></svg>
-    <svg class="g g-fill" style="top:26%;left:49%;width:16px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34"/></svg>
-    <svg class="g g-d" style="top:29%;left:14%;width:32px" viewBox="0 0 40 40"><polygon points="20,4 34,12 34,28 20,36 6,28 6,12"/></svg>
-    <svg class="g g-b" style="top:32%;left:95%;width:44px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-e" style="top:35%;left:6%;width:34px" viewBox="0 0 40 40"><polygon points="20,5 34,13 20,21 6,13"/><polygon points="6,13 20,21 20,35 6,27"/><polygon points="34,13 20,21 20,35 34,27"/></svg>
+      <!-- Transição / Brindes -->
+      <svg class="g g-c" style="top:22%;left:4%;width:30px" viewBox="0 0 40 40">
+        <rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(20 20 20)" />
+      </svg>
+      <svg class="g g-a" style="top:24%;left:92%;width:36px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" transform="rotate(180 20 20)" />
+      </svg>
+      <svg class="g g-fill" style="top:26%;left:49%;width:16px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" />
+      </svg>
+      <svg class="g g-d" style="top:29%;left:14%;width:32px" viewBox="0 0 40 40">
+        <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" />
+      </svg>
+      <svg class="g g-b" style="top:32%;left:95%;width:44px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-e" style="top:35%;left:6%;width:34px" viewBox="0 0 40 40">
+        <polygon points="20,5 34,13 20,21 6,13" />
+        <polygon points="6,13 20,21 20,35 6,27" />
+        <polygon points="34,13 20,21 20,35 34,27" />
+      </svg>
 
-    <!-- Decoração & Colecionáveis -->
-    <svg class="g g-c" style="top:39%;left:89%;width:24px" viewBox="0 0 40 40"><path d="M20 6v28M6 20h28"/></svg>
-    <svg class="g g-a" style="top:41%;left:2%;width:48px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34" transform="rotate(-15 20 20)"/></svg>
-    <svg class="g g-fill" style="top:44%;left:93%;width:15px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-b" style="top:46%;left:46%;width:22px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="7"/></svg>
-    <svg class="g g-d" style="top:49%;left:10%;width:34px" viewBox="0 0 40 40"><polygon points="20,4 34,12 34,28 20,36 6,28 6,12"/></svg>
-    <svg class="g g-c" style="top:52%;left:92%;width:32px" viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(45 20 20)"/></svg>
+      <!-- Decoração & Colecionáveis -->
+      <svg class="g g-c" style="top:39%;left:89%;width:24px" viewBox="0 0 40 40">
+        <path d="M20 6v28M6 20h28" />
+      </svg>
+      <svg class="g g-a" style="top:41%;left:2%;width:48px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" transform="rotate(-15 20 20)" />
+      </svg>
+      <svg class="g g-fill" style="top:44%;left:93%;width:15px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-b" style="top:46%;left:46%;width:22px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+        <circle cx="20" cy="20" r="7" />
+      </svg>
+      <svg class="g g-d" style="top:49%;left:10%;width:34px" viewBox="0 0 40 40">
+        <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" />
+      </svg>
+      <svg class="g g-c" style="top:52%;left:92%;width:32px" viewBox="0 0 40 40">
+        <rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(45 20 20)" />
+      </svg>
 
-    <!-- Utilidades & Lojas -->
-    <svg class="g g-e" style="top:55%;left:4%;width:36px" viewBox="0 0 40 40"><polygon points="20,5 34,13 20,21 6,13"/><polygon points="6,13 20,21 20,35 6,27"/><polygon points="34,13 20,21 20,35 34,27"/></svg>
-    <svg class="g g-fill" style="top:58%;left:88%;width:16px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34"/></svg>
-    <svg class="g g-a" style="top:61%;left:52%;width:26px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34" transform="rotate(180 20 20)"/></svg>
-    <svg class="g g-b" style="top:64%;left:3%;width:38px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-c" style="top:67%;left:94%;width:22px" viewBox="0 0 40 40"><path d="M20 6v28M6 20h28"/></svg>
-    <svg class="g g-d" style="top:69%;left:12%;width:34px" viewBox="0 0 40 40"><polygon points="20,4 34,12 34,28 20,36 6,28 6,12"/></svg>
+      <!-- Utilidades & Lojas -->
+      <svg class="g g-e" style="top:55%;left:4%;width:36px" viewBox="0 0 40 40">
+        <polygon points="20,5 34,13 20,21 6,13" />
+        <polygon points="6,13 20,21 20,35 6,27" />
+        <polygon points="34,13 20,21 20,35 34,27" />
+      </svg>
+      <svg class="g g-fill" style="top:58%;left:88%;width:16px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" />
+      </svg>
+      <svg class="g g-a" style="top:61%;left:52%;width:26px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" transform="rotate(180 20 20)" />
+      </svg>
+      <svg class="g g-b" style="top:64%;left:3%;width:38px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-c" style="top:67%;left:94%;width:22px" viewBox="0 0 40 40">
+        <path d="M20 6v28M6 20h28" />
+      </svg>
+      <svg class="g g-d" style="top:69%;left:12%;width:34px" viewBox="0 0 40 40">
+        <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" />
+      </svg>
 
-    <!-- Como funciona & Trail final -->
-    <svg class="g g-a" style="top:73%;left:91%;width:42px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34" transform="rotate(30 20 20)"/></svg>
-    <svg class="g g-fill" style="top:75%;left:7%;width:15px" viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="4" transform="rotate(25 20 20)"/></svg>
-    <svg class="g g-b" style="top:78%;left:48%;width:26px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="7"/></svg>
-    <svg class="g g-e" style="top:81%;left:94%;width:34px" viewBox="0 0 40 40"><polygon points="20,5 34,13 20,21 6,13"/><polygon points="6,13 20,21 20,35 6,27"/><polygon points="34,13 20,21 20,35 34,27"/></svg>
-    <svg class="g g-c" style="top:83%;left:5%;width:28px" viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(-15 20 20)"/></svg>
+      <!-- Como funciona & Trail final -->
+      <svg class="g g-a" style="top:73%;left:91%;width:42px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" transform="rotate(30 20 20)" />
+      </svg>
+      <svg class="g g-fill" style="top:75%;left:7%;width:15px" viewBox="0 0 40 40">
+        <rect x="6" y="6" width="28" height="28" rx="4" transform="rotate(25 20 20)" />
+      </svg>
+      <svg class="g g-b" style="top:78%;left:48%;width:26px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+        <circle cx="20" cy="20" r="7" />
+      </svg>
+      <svg class="g g-e" style="top:81%;left:94%;width:34px" viewBox="0 0 40 40">
+        <polygon points="20,5 34,13 20,21 6,13" />
+        <polygon points="6,13 20,21 20,35 6,27" />
+        <polygon points="34,13 20,21 20,35 34,27" />
+      </svg>
+      <svg class="g g-c" style="top:83%;left:5%;width:28px" viewBox="0 0 40 40">
+        <rect x="8" y="8" width="24" height="24" rx="3" transform="rotate(-15 20 20)" />
+      </svg>
 
-    <!-- Chamada final & Rodapé -->
-    <svg class="g g-d" style="top:87%;left:90%;width:36px" viewBox="0 0 40 40"><polygon points="20,4 34,12 34,28 20,36 6,28 6,12"/></svg>
-    <svg class="g g-a" style="top:90%;left:8%;width:36px" viewBox="0 0 40 40"><polygon points="20,4 37,34 3,34"/></svg>
-    <svg class="g g-b" style="top:92%;left:51%;width:22px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-c" style="top:95%;left:93%;width:24px" viewBox="0 0 40 40"><path d="M20 6v28M6 20h28"/></svg>
-    <svg class="g g-fill" style="top:97%;left:4%;width:16px" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/></svg>
-    <svg class="g g-e" style="top:98%;left:88%;width:32px" viewBox="0 0 40 40"><polygon points="20,5 34,13 20,21 6,13"/><polygon points="6,13 20,21 20,35 6,27"/><polygon points="34,13 20,21 20,35 34,27"/></svg>
-  </div>
-
-  <!-- ============ CABEÇALHO ============ -->
-  <header class="site-header" id="header">
-    <div class="container header-inner">
-      <a href="#inicio" class="brand" aria-label="FanaticLab 3D, ir para o início">
-        <img src="images/logo-mark.png" alt="" class="brand-mark" width="40" height="44">
-        <span class="brand-text">Fanatic<span>Lab</span><sup>3D</sup></span>
-      </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="#produtos">Produtos</a>
-        <a href="#comprar">Onde comprar</a>
-        <a href="#como-funciona">Como funciona</a>
-      </nav>
-      <a class="btn btn-primary btn-sm" data-wa="Olá! Vim pelo site da FanaticLab 3D e gostaria de fazer um orçamento." id="header-whatsapp">
-        <svg class="ico"><use href="#i-wa"/></svg><span>Chamar no WhatsApp</span>
-      </a>
+      <!-- Chamada final & Rodapé -->
+      <svg class="g g-d" style="top:87%;left:90%;width:36px" viewBox="0 0 40 40">
+        <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" />
+      </svg>
+      <svg class="g g-a" style="top:90%;left:8%;width:36px" viewBox="0 0 40 40">
+        <polygon points="20,4 37,34 3,34" />
+      </svg>
+      <svg class="g g-b" style="top:92%;left:51%;width:22px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-c" style="top:95%;left:93%;width:24px" viewBox="0 0 40 40">
+        <path d="M20 6v28M6 20h28" />
+      </svg>
+      <svg class="g g-fill" style="top:97%;left:4%;width:16px" viewBox="0 0 40 40">
+        <circle cx="20" cy="20" r="16" />
+      </svg>
+      <svg class="g g-e" style="top:98%;left:88%;width:32px" viewBox="0 0 40 40">
+        <polygon points="20,5 34,13 20,21 6,13" />
+        <polygon points="6,13 20,21 20,35 6,27" />
+        <polygon points="34,13 20,21 20,35 34,27" />
+      </svg>
     </div>
-  </header>
 
-  <main>
-
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1 class="reveal" style="--d:.08s" aria-label="Sua ideia, impressa em 3D.">Sua ideia,<br><span class="hl" id="typed" aria-hidden="true">impressa em 3D.</span><span class="caret" aria-hidden="true"></span></h1>
-          <p class="lead reveal" style="--d:.16s">Brindes, decoração, colecionáveis e peças sob medida, feitos com muito capricho. Peça pelo WhatsApp ou compre pronto na Shopee e no Mercado Livre.</p>
-          <div class="hero-actions reveal" style="--d:.24s">
-            <a class="btn btn-primary" data-wa="Olá! Quero fazer um orçamento de impressão 3D." id="hero-whatsapp">
-              <svg class="ico"><use href="#i-wa"/></svg><span>Pedir orçamento</span>
-            </a>
-            <a class="btn btn-ghost" href="#produtos" id="hero-produtos"><span>Ver produtos</span><svg class="ico"><use href="#i-arrow"/></svg></a>
-          </div>
-          <ul class="ticks reveal" style="--d:.32s">
-            <li><svg class="ico"><use href="#i-check"/></svg>Feito sob medida</li>
-            <li><svg class="ico"><use href="#i-check"/></svg>Envio para todo o Brasil</li>
-            <li><svg class="ico"><use href="#i-check"/></svg>Resposta rápida</li>
-          </ul>
-        </div>
-
-        <div class="hero-visual reveal" style="--d:.2s">
-          <img src="images/hero.jpg" alt="Peças impressas em 3D: luminária, vaso, robô colecionável e chaveiros" width="896" height="1200" fetchpriority="high">
-          <div class="hero-tag">
-            <strong>Brindes para empresas</strong>
-            <span>Sua marca em peças que as pessoas guardam</span>
-          </div>
-        </div>
+    <!-- ============ CABEÇALHO ============ -->
+    <header class="site-header" id="header">
+      <div class="container header-inner">
+        <a href="#inicio" class="brand" aria-label="FanaticLab 3D, ir para o início">
+          <img src="images/logo-mark.png" alt="" class="brand-mark" width="40" height="44">
+          <span class="brand-text">Fanatic<span>Lab</span><sup>3D</sup></span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <a href="#produtos">Produtos</a>
+          <a href="#comprar">Onde comprar</a>
+          <a href="#como-funciona">Como funciona</a>
+        </nav>
+        <a class="btn btn-primary btn-sm"
+          data-wa="Olá! Vim pelo site da FanaticLab 3D e gostaria de fazer um orçamento." id="header-whatsapp">
+          <svg class="ico">
+            <use href="#i-wa" />
+          </svg><span>Chamar no WhatsApp</span>
+        </a>
       </div>
-      <i class="anchor hero-start" data-anchor></i>
-      <i class="anchor hero-end" data-anchor></i>
-    </section>
+    </header>
 
-    <!-- ============ PRODUTOS ============ -->
-    <section class="products" id="produtos">
-      <div class="container">
-        <header class="sec-head reveal">
-          <span class="eyebrow">O que fazemos</span>
-          <h2>Peças que dão vida<br>às suas ideias</h2>
-          <p>Do presente personalizado à peça que você não encontra em lugar nenhum. Tudo feito aqui, camada por camada.</p>
-        </header>
+    <main>
 
-        <article class="pr pr--left" id="brindes">
-          <div class="pr-card reveal">
-            <figure>
-              <img src="images/brindes.jpg" alt="Chaveiros e porta-canetas personalizados impressos em 3D" loading="lazy" width="1100" height="821">
-              <span class="chip">Mais pedido</span>
-            </figure>
-            <div class="pr-body">
-              <h3>Brindes personalizados</h3>
-              <p>Chaveiros, porta-canetas e mimos com a identidade da sua marca. Perfeitos para empresas, eventos e presentes.</p>
-              <a class="link" data-wa="Olá! Quero um orçamento de brindes personalizados." id="brindes-whatsapp">Pedir orçamento <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 class="reveal" style="--d:.08s" aria-label="Sua ideia, nossa impressão.">Sua ideia,<br><span class="hl"
+                id="typed" aria-hidden="true">nossa impressão.</span><span class="caret" aria-hidden="true"></span></h1>
+            <p class="lead reveal" style="--d:.16s">Brindes, decoração, colecionáveis e peças sob medida, feitos com
+              muito capricho. Peça pelo WhatsApp ou compre pronto na Shopee e no Mercado Livre.</p>
+            <div class="hero-actions reveal" style="--d:.24s">
+              <a class="btn btn-primary" data-wa="Olá! Quero fazer um orçamento de impressão 3D." id="hero-whatsapp">
+                <svg class="ico">
+                  <use href="#i-wa" />
+                </svg><span>Pedir orçamento</span>
+              </a>
+              <a class="btn btn-ghost" href="#produtos" id="hero-produtos"><span>Ver produtos</span><svg class="ico">
+                  <use href="#i-arrow" />
+                </svg></a>
+            </div>
+            <ul class="ticks reveal" style="--d:.32s">
+              <li><svg class="ico">
+                  <use href="#i-check" />
+                </svg>Feito sob medida</li>
+              <li><svg class="ico">
+                  <use href="#i-check" />
+                </svg>Envio para todo o Brasil</li>
+              <li><svg class="ico">
+                  <use href="#i-check" />
+                </svg>Resposta rápida</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal" style="--d:.2s">
+            <img src="images/hero.jpg" alt="Peças impressas em 3D: luminária, vaso, robô colecionável e chaveiros"
+              width="896" height="1200" fetchpriority="high">
+            <div class="hero-tag">
+              <strong>Brindes para empresas</strong>
+              <span>Sua marca em peças que as pessoas guardam</span>
             </div>
           </div>
-          <div class="lane" data-anchor aria-hidden="true">
-            <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
-              <circle cx="100" cy="28" r="14" fill="none" stroke="url(#g-metal)" stroke-width="5"/>
-              <polygon points="100,45 160,80 100,115 40,80" fill="url(#g-top)"/>
-              <polygon points="40,80 100,115 100,185 40,150" fill="url(#g-left)"/>
-              <polygon points="100,115 160,80 160,150 100,185" fill="url(#g-right)"/>
-              <path d="M40 80 L100 115 L160 80 M100 115 V185" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg><i class="print-edge"></i></div>
-          </div>
-        </article>
+        </div>
+        <i class="anchor hero-start" data-anchor></i>
+        <i class="anchor hero-end" data-anchor></i>
+      </section>
 
-        <article class="pr pr--right" id="decoracao">
-          <div class="pr-card reveal">
-            <figure>
-              <img src="images/decoracao.jpg" alt="Luminária e vaso decorativos impressos em 3D" loading="lazy" width="1100" height="821">
-            </figure>
-            <div class="pr-body">
-              <h3>Decoração e luminárias</h3>
-              <p>Luminárias, vasos e peças de design que deixam qualquer cantinho mais bonito e cheio de personalidade.</p>
-              <a class="link" data-wa="Olá! Quero um orçamento de decoração e luminárias." id="decoracao-whatsapp">Pedir orçamento <svg class="ico"><use href="#i-arrow"/></svg></a>
-            </div>
-          </div>
-          <div class="lane" data-anchor aria-hidden="true">
-            <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
-              <g stroke="#9AA4B2" stroke-width="2" stroke-linecap="round"><path d="M100 18 L82 4"/><path d="M100 18 L100 2"/><path d="M100 18 L119 6"/></g>
-              <ellipse cx="100" cy="186" rx="29" ry="6" fill="#063A94"/>
-              <path d="M80 20 H120 C120 50 150 70 150 112 C150 150 135 175 128 186 C115 192 85 192 72 186 C65 175 50 150 50 112 C50 70 80 50 80 20 Z" fill="url(#g-cyl)"/>
-              <g fill="none" stroke="#000" stroke-opacity=".16" stroke-width="3" stroke-linecap="round"><path d="M78 95 Q100 108 122 92"/><path d="M68 120 Q100 138 132 116"/><path d="M62 142 Q100 162 138 138"/><path d="M72 164 Q100 176 128 162"/></g>
-              <path d="M70 100 C66 130 74 160 84 178" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="5" stroke-linecap="round"/>
-              <ellipse cx="100" cy="20" rx="20" ry="6" fill="#8DB8FF"/>
-              <ellipse cx="100" cy="21" rx="15" ry="3.8" fill="#04255B"/>
-            </svg><i class="print-edge"></i></div>
-          </div>
-        </article>
+      <!-- ============ PRODUTOS ============ -->
+      <section class="products" id="produtos">
+        <div class="container">
+          <header class="sec-head reveal">
+            <span class="eyebrow">O que fazemos</span>
+            <h2>Peças que dão vida<br>às suas ideias</h2>
+            <p>Do presente personalizado à peça que você não encontra em lugar nenhum. Tudo feito aqui, camada por
+              camada.</p>
+          </header>
 
-        <article class="pr pr--left" id="figures">
-          <div class="pr-card reveal">
-            <figure>
-              <img src="images/figures.jpg" alt="Action figure colecionável impresso em 3D e pintado à mão" loading="lazy" width="1100" height="821">
-            </figure>
-            <div class="pr-body">
-              <h3>Action figures e colecionáveis</h3>
-              <p>Miniaturas cheias de detalhes para colecionar, presentear ou decorar a estante. Também fazemos sob encomenda.</p>
-              <a class="link" data-wa="Olá! Quero um orçamento de action figure ou colecionável." id="figures-whatsapp">Pedir orçamento <svg class="ico"><use href="#i-arrow"/></svg></a>
-            </div>
-          </div>
-          <div class="lane" data-anchor aria-hidden="true">
-            <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
-              <line x1="100" y1="30" x2="100" y2="16" stroke="url(#g-metal)" stroke-width="3.5" stroke-linecap="round"/>
-              <circle cx="100" cy="13" r="6" fill="url(#g-blue)"/>
-              <rect x="46" y="90" width="17" height="48" rx="8.5" fill="url(#g-white)"/>
-              <rect x="137" y="90" width="17" height="48" rx="8.5" fill="url(#g-white)"/>
-              <rect x="76" y="140" width="20" height="34" rx="8" fill="url(#g-dark)"/>
-              <rect x="104" y="140" width="20" height="34" rx="8" fill="url(#g-dark)"/>
-              <rect x="70" y="169" width="30" height="15" rx="7.5" fill="url(#g-metal)"/>
-              <rect x="100" y="169" width="30" height="15" rx="7.5" fill="url(#g-metal)"/>
-              <rect x="66" y="84" width="68" height="60" rx="18" fill="url(#g-blue)"/>
-              <circle cx="100" cy="113" r="10" fill="url(#g-white)"/>
-              <rect x="68" y="30" width="64" height="50" rx="20" fill="url(#g-white)"/>
-              <rect x="77" y="43" width="46" height="24" rx="12" fill="url(#g-dark)"/>
-              <circle cx="91" cy="55" r="4.5" fill="#6AA4FF"/><circle cx="109" cy="55" r="4.5" fill="#6AA4FF"/>
-              <path d="M78 38 Q100 33 120 38" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
-            </svg><i class="print-edge"></i></div>
-          </div>
-        </article>
-
-        <article class="pr pr--right" id="utilidades">
-          <div class="pr-card reveal">
-            <figure>
-              <img src="images/utilidades.jpg" alt="Suporte de fone, suporte de celular e organizador de cabos impressos em 3D" loading="lazy" width="1100" height="821">
-            </figure>
-            <div class="pr-body">
-              <h3>Utilidades para o dia a dia</h3>
-              <p>Suportes, organizadores e peças práticas feitas na medida exata do que você precisa.</p>
-              <a class="link" data-wa="Olá! Quero um orçamento de uma peça sob medida." id="utilidades-whatsapp">Pedir orçamento <svg class="ico"><use href="#i-arrow"/></svg></a>
-            </div>
-          </div>
-          <div class="lane" data-anchor aria-hidden="true">
-            <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
-              <rect x="92" y="88" width="16" height="88" rx="8" fill="url(#g-metal)"/>
-              <ellipse cx="100" cy="182" rx="52" ry="11" fill="#1D2126"/>
-              <rect x="48" y="170" width="104" height="12" fill="url(#g-metal)"/>
-              <ellipse cx="100" cy="170" rx="52" ry="11" fill="#8E97A4"/>
-              <ellipse cx="100" cy="170" rx="46" ry="8.5" fill="#4A525C"/>
-              <path d="M54 106 C54 42 146 42 146 106" fill="none" stroke="#0848B8" stroke-width="15" stroke-linecap="round"/>
-              <path d="M54 103 C54 40 146 40 146 103" fill="none" stroke="#0A63F5" stroke-width="11" stroke-linecap="round"/>
-              <path d="M60 92 C64 56 100 40 130 52" fill="none" stroke="#6AA4FF" stroke-width="3" stroke-linecap="round" stroke-opacity=".8"/>
-              <rect x="34" y="92" width="28" height="48" rx="14" fill="url(#g-dark)"/>
-              <rect x="138" y="92" width="28" height="48" rx="14" fill="url(#g-dark)"/>
-              <rect x="43" y="101" width="10" height="30" rx="5" fill="url(#g-blue)"/>
-              <rect x="147" y="101" width="10" height="30" rx="5" fill="url(#g-blue)"/>
-            </svg><i class="print-edge"></i></div>
-          </div>
-        </article>
-
-        <!-- ============ ONDE COMPRAR ============ -->
-        <article class="pr pr--left" id="comprar">
-          <div class="pr-card pr-card--text reveal">
-            <div class="pr-body">
-              <span class="eyebrow">Pronta entrega</span>
-              <h3 class="h3-lg">Compre pronto e receba em casa</h3>
-              <p>Nossos produtos mais queridos estão nas lojas oficiais, com pagamento facilitado e entrega protegida.</p>
-              <div class="stores">
-                <a class="store store--shopee" href="https://shopee.com.br/" target="_blank" rel="noopener" id="loja-shopee">
-                  <span class="store-badge">S</span>
-                  <span class="store-name"><strong>Shopee</strong><small>Ver nossa loja</small></span>
-                  <svg class="ico"><use href="#i-arrow"/></svg>
-                </a>
-                <a class="store store--ml" href="https://www.mercadolivre.com.br/" target="_blank" rel="noopener" id="loja-mercadolivre">
-                  <span class="store-badge">ML</span>
-                  <span class="store-name"><strong>Mercado Livre</strong><small>Ver nossa loja</small></span>
-                  <svg class="ico"><use href="#i-arrow"/></svg>
-                </a>
+          <article class="pr pr--left" id="brindes">
+            <div class="pr-card reveal">
+              <figure>
+                <img src="images/brindes.jpg" alt="Chaveiros e porta-canetas personalizados impressos em 3D"
+                  loading="lazy" width="1100" height="821">
+                <span class="chip">Mais pedido</span>
+              </figure>
+              <div class="pr-body">
+                <h3>Brindes personalizados</h3>
+                <p>Chaveiros, porta-canetas e mimos com a identidade da sua marca. Perfeitos para empresas, eventos e
+                  presentes.</p>
+                <a class="link" data-wa="Olá! Quero um orçamento de brindes personalizados." id="brindes-whatsapp">Pedir
+                  orçamento <svg class="ico">
+                    <use href="#i-arrow" />
+                  </svg></a>
               </div>
             </div>
-          </div>
-          <div class="lane" data-anchor aria-hidden="true">
-            <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
-              <path d="M80 72 V56 a20 20 0 0 1 40 0 V72" fill="none" stroke="url(#g-metal)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M40 76 L58 66 H174 L156 76 Z" fill="url(#g-top)"/>
-              <path d="M156 76 L174 66 L182 172 L164 184 Z" fill="url(#g-right)"/>
-              <path d="M40 76 H156 L164 184 H32 Z" fill="url(#g-front)"/>
-              <path d="M76 130 Q98 150 120 130" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-              <circle cx="78" cy="88" r="5" fill="#fff" fill-opacity=".9"/><circle cx="118" cy="88" r="5" fill="#fff" fill-opacity=".9"/>
-            </svg><i class="print-edge"></i></div>
-          </div>
-        </article>
-
-        <!-- ============ COMO FUNCIONA ============ -->
-        <article class="pr pr--right" id="como-funciona">
-          <div class="pr-card pr-card--text reveal">
-            <div class="pr-body">
-              <span class="eyebrow">Como funciona</span>
-              <h3 class="h3-lg">Simples do começo ao fim</h3>
-              <ol class="steps">
-                <li><span class="step-n">1</span><div><strong>Conte sua ideia</strong><p>Mande uma foto, um arquivo 3D ou só a ideia pelo WhatsApp.</p></div></li>
-                <li><span class="step-n">2</span><div><strong>Receba o orçamento</strong><p>Respondemos rápido com valor e prazo, sem compromisso.</p></div></li>
-                <li><span class="step-n">3</span><div><strong>Receba em casa</strong><p>Produzimos com capricho e enviamos para todo o Brasil.</p></div></li>
-              </ol>
+            <div class="lane" data-anchor aria-hidden="true">
+              <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
+                  <circle cx="100" cy="28" r="14" fill="none" stroke="url(#g-metal)" stroke-width="5" />
+                  <polygon points="100,45 160,80 100,115 40,80" fill="url(#g-top)" />
+                  <polygon points="40,80 100,115 100,185 40,150" fill="url(#g-left)" />
+                  <polygon points="100,115 160,80 160,150 100,185" fill="url(#g-right)" />
+                  <path d="M40 80 L100 115 L160 80 M100 115 V185" fill="none" stroke="#fff" stroke-opacity=".35"
+                    stroke-width="1.5" stroke-linejoin="round" />
+                </svg><i class="print-edge"></i></div>
             </div>
-          </div>
-          <div class="lane" data-anchor aria-hidden="true">
-            <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
-              <g transform="translate(7 9)" fill="#063A94"><path d="M50 104 L42 130 L80 104 Z"/><rect x="24" y="30" width="124" height="76" rx="24"/></g>
-              <path d="M50 104 L42 130 L80 104 Z" fill="#0A55D6"/>
-              <rect x="24" y="30" width="124" height="76" rx="24" fill="url(#g-front)"/>
-              <circle class="dot" cx="62" cy="68" r="7" fill="#fff"/><circle class="dot" cx="86" cy="68" r="7" fill="#fff"/><circle class="dot" cx="110" cy="68" r="7" fill="#fff"/>
-              <g transform="translate(7 9)" fill="#8E97A4"><path d="M146 160 L158 186 L124 160 Z"/><rect x="70" y="120" width="106" height="52" rx="22"/></g>
-              <path d="M146 160 L158 186 L124 160 Z" fill="#D5DBE6"/>
-              <rect x="70" y="120" width="106" height="52" rx="22" fill="url(#g-white)"/>
-              <path d="M102 146 l11 11 l22 -22" fill="none" stroke="#0A63F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg><i class="print-edge"></i></div>
-          </div>
-        </article>
-      </div>
+          </article>
 
-      <div class="trail-end"><i class="anchor" data-anchor></i></div>
-    </section>
+          <article class="pr pr--right" id="decoracao">
+            <div class="pr-card reveal">
+              <figure>
+                <img src="images/decoracao.jpg" alt="Luminária e vaso decorativos impressos em 3D" loading="lazy"
+                  width="1100" height="821">
+              </figure>
+              <div class="pr-body">
+                <h3>Decoração e luminárias</h3>
+                <p>Luminárias, vasos e peças de design que deixam qualquer cantinho mais bonito e cheio de
+                  personalidade.</p>
+                <a class="link" data-wa="Olá! Quero um orçamento de decoração e luminárias."
+                  id="decoracao-whatsapp">Pedir orçamento <svg class="ico">
+                    <use href="#i-arrow" />
+                  </svg></a>
+              </div>
+            </div>
+            <div class="lane" data-anchor aria-hidden="true">
+              <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
+                  <g stroke="#9AA4B2" stroke-width="2" stroke-linecap="round">
+                    <path d="M100 18 L82 4" />
+                    <path d="M100 18 L100 2" />
+                    <path d="M100 18 L119 6" />
+                  </g>
+                  <ellipse cx="100" cy="186" rx="29" ry="6" fill="#063A94" />
+                  <path
+                    d="M80 20 H120 C120 50 150 70 150 112 C150 150 135 175 128 186 C115 192 85 192 72 186 C65 175 50 150 50 112 C50 70 80 50 80 20 Z"
+                    fill="url(#g-cyl)" />
+                  <g fill="none" stroke="#000" stroke-opacity=".16" stroke-width="3" stroke-linecap="round">
+                    <path d="M78 95 Q100 108 122 92" />
+                    <path d="M68 120 Q100 138 132 116" />
+                    <path d="M62 142 Q100 162 138 138" />
+                    <path d="M72 164 Q100 176 128 162" />
+                  </g>
+                  <path d="M70 100 C66 130 74 160 84 178" fill="none" stroke="#fff" stroke-opacity=".28"
+                    stroke-width="5" stroke-linecap="round" />
+                  <ellipse cx="100" cy="20" rx="20" ry="6" fill="#8DB8FF" />
+                  <ellipse cx="100" cy="21" rx="15" ry="3.8" fill="#04255B" />
+                </svg><i class="print-edge"></i></div>
+            </div>
+          </article>
 
-    <!-- ============ CHAMADA FINAL ============ -->
-    <section class="cta-wrap" id="contato">
-      <div class="container">
-        <div class="cta reveal">
-          <h2>Bora tirar sua ideia do papel?</h2>
-          <p>Chame a gente no WhatsApp, conte o que você imaginou e receba um orçamento sem compromisso.</p>
-          <a class="btn btn-white" data-wa="Olá! Tenho uma ideia e gostaria de um orçamento." id="cta-whatsapp">
-            <svg class="ico"><use href="#i-wa"/></svg><span>Chamar no WhatsApp</span>
-          </a>
+          <article class="pr pr--left" id="figures">
+            <div class="pr-card reveal">
+              <figure>
+                <img src="images/figures.jpg" alt="Action figure colecionável impresso em 3D e pintado à mão"
+                  loading="lazy" width="1100" height="821">
+              </figure>
+              <div class="pr-body">
+                <h3>Action figures e colecionáveis</h3>
+                <p>Miniaturas cheias de detalhes para colecionar, presentear ou decorar a estante. Também fazemos sob
+                  encomenda.</p>
+                <a class="link" data-wa="Olá! Quero um orçamento de action figure ou colecionável."
+                  id="figures-whatsapp">Pedir orçamento <svg class="ico">
+                    <use href="#i-arrow" />
+                  </svg></a>
+              </div>
+            </div>
+            <div class="lane" data-anchor aria-hidden="true">
+              <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
+                  <line x1="100" y1="30" x2="100" y2="16" stroke="url(#g-metal)" stroke-width="3.5"
+                    stroke-linecap="round" />
+                  <circle cx="100" cy="13" r="6" fill="url(#g-blue)" />
+                  <rect x="46" y="90" width="17" height="48" rx="8.5" fill="url(#g-white)" />
+                  <rect x="137" y="90" width="17" height="48" rx="8.5" fill="url(#g-white)" />
+                  <rect x="76" y="140" width="20" height="34" rx="8" fill="url(#g-dark)" />
+                  <rect x="104" y="140" width="20" height="34" rx="8" fill="url(#g-dark)" />
+                  <rect x="70" y="169" width="30" height="15" rx="7.5" fill="url(#g-metal)" />
+                  <rect x="100" y="169" width="30" height="15" rx="7.5" fill="url(#g-metal)" />
+                  <rect x="66" y="84" width="68" height="60" rx="18" fill="url(#g-blue)" />
+                  <circle cx="100" cy="113" r="10" fill="url(#g-white)" />
+                  <rect x="68" y="30" width="64" height="50" rx="20" fill="url(#g-white)" />
+                  <rect x="77" y="43" width="46" height="24" rx="12" fill="url(#g-dark)" />
+                  <circle cx="91" cy="55" r="4.5" fill="#6AA4FF" />
+                  <circle cx="109" cy="55" r="4.5" fill="#6AA4FF" />
+                  <path d="M78 38 Q100 33 120 38" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="3"
+                    stroke-linecap="round" />
+                </svg><i class="print-edge"></i></div>
+            </div>
+          </article>
+
+          <article class="pr pr--right" id="utilidades">
+            <div class="pr-card reveal">
+              <figure>
+                <img src="images/utilidades.jpg"
+                  alt="Suporte de fone, suporte de celular e organizador de cabos impressos em 3D" loading="lazy"
+                  width="1100" height="821">
+              </figure>
+              <div class="pr-body">
+                <h3>Utilidades para o dia a dia</h3>
+                <p>Suportes, organizadores e peças práticas feitas na medida exata do que você precisa.</p>
+                <a class="link" data-wa="Olá! Quero um orçamento de uma peça sob medida." id="utilidades-whatsapp">Pedir
+                  orçamento <svg class="ico">
+                    <use href="#i-arrow" />
+                  </svg></a>
+              </div>
+            </div>
+            <div class="lane" data-anchor aria-hidden="true">
+              <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
+                  <rect x="92" y="88" width="16" height="88" rx="8" fill="url(#g-metal)" />
+                  <ellipse cx="100" cy="182" rx="52" ry="11" fill="#1D2126" />
+                  <rect x="48" y="170" width="104" height="12" fill="url(#g-metal)" />
+                  <ellipse cx="100" cy="170" rx="52" ry="11" fill="#8E97A4" />
+                  <ellipse cx="100" cy="170" rx="46" ry="8.5" fill="#4A525C" />
+                  <path d="M54 106 C54 42 146 42 146 106" fill="none" stroke="#0848B8" stroke-width="15"
+                    stroke-linecap="round" />
+                  <path d="M54 103 C54 40 146 40 146 103" fill="none" stroke="#0A63F5" stroke-width="11"
+                    stroke-linecap="round" />
+                  <path d="M60 92 C64 56 100 40 130 52" fill="none" stroke="#6AA4FF" stroke-width="3"
+                    stroke-linecap="round" stroke-opacity=".8" />
+                  <rect x="34" y="92" width="28" height="48" rx="14" fill="url(#g-dark)" />
+                  <rect x="138" y="92" width="28" height="48" rx="14" fill="url(#g-dark)" />
+                  <rect x="43" y="101" width="10" height="30" rx="5" fill="url(#g-blue)" />
+                  <rect x="147" y="101" width="10" height="30" rx="5" fill="url(#g-blue)" />
+                </svg><i class="print-edge"></i></div>
+            </div>
+          </article>
+
+          <!-- ============ ONDE COMPRAR ============ -->
+          <article class="pr pr--left" id="comprar">
+            <div class="pr-card pr-card--text reveal">
+              <div class="pr-body">
+                <span class="eyebrow">Pronta entrega</span>
+                <h3 class="h3-lg">Compre pronto e receba em casa</h3>
+                <p>Nossos produtos mais queridos estão nas lojas oficiais, com pagamento facilitado e entrega protegida.
+                </p>
+                <div class="stores">
+                  <a class="store store--shopee" href="https://shopee.com.br/" target="_blank" rel="noopener"
+                    id="loja-shopee">
+                    <span class="store-badge">S</span>
+                    <span class="store-name"><strong>Shopee</strong><small>Ver nossa loja</small></span>
+                    <svg class="ico">
+                      <use href="#i-arrow" />
+                    </svg>
+                  </a>
+                  <a class="store store--ml" href="https://www.mercadolivre.com.br/" target="_blank" rel="noopener"
+                    id="loja-mercadolivre">
+                    <span class="store-badge">ML</span>
+                    <span class="store-name"><strong>Mercado Livre</strong><small>Ver nossa loja</small></span>
+                    <svg class="ico">
+                      <use href="#i-arrow" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="lane" data-anchor aria-hidden="true">
+              <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
+                  <path d="M80 72 V56 a20 20 0 0 1 40 0 V72" fill="none" stroke="url(#g-metal)" stroke-width="6"
+                    stroke-linecap="round" />
+                  <path d="M40 76 L58 66 H174 L156 76 Z" fill="url(#g-top)" />
+                  <path d="M156 76 L174 66 L182 172 L164 184 Z" fill="url(#g-right)" />
+                  <path d="M40 76 H156 L164 184 H32 Z" fill="url(#g-front)" />
+                  <path d="M76 130 Q98 150 120 130" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" />
+                  <circle cx="78" cy="88" r="5" fill="#fff" fill-opacity=".9" />
+                  <circle cx="118" cy="88" r="5" fill="#fff" fill-opacity=".9" />
+                </svg><i class="print-edge"></i></div>
+            </div>
+          </article>
+
+          <!-- ============ COMO FUNCIONA ============ -->
+          <article class="pr pr--right" id="como-funciona">
+            <div class="pr-card pr-card--text reveal">
+              <div class="pr-body">
+                <span class="eyebrow">Como funciona</span>
+                <h3 class="h3-lg">Simples do começo ao fim</h3>
+                <ol class="steps">
+                  <li><span class="step-n">1</span>
+                    <div><strong>Conte sua ideia</strong>
+                      <p>Mande uma foto, um arquivo 3D ou só a ideia pelo WhatsApp.</p>
+                    </div>
+                  </li>
+                  <li><span class="step-n">2</span>
+                    <div><strong>Receba o orçamento</strong>
+                      <p>Respondemos rápido com valor e prazo, sem compromisso.</p>
+                    </div>
+                  </li>
+                  <li><span class="step-n">3</span>
+                    <div><strong>Receba em casa</strong>
+                      <p>Produzimos com capricho e enviamos para todo o Brasil.</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="lane" data-anchor aria-hidden="true">
+              <div class="print"><svg class="print-solid" viewBox="0 0 200 200">
+                  <g transform="translate(7 9)" fill="#063A94">
+                    <path d="M50 104 L42 130 L80 104 Z" />
+                    <rect x="24" y="30" width="124" height="76" rx="24" />
+                  </g>
+                  <path d="M50 104 L42 130 L80 104 Z" fill="#0A55D6" />
+                  <rect x="24" y="30" width="124" height="76" rx="24" fill="url(#g-front)" />
+                  <circle class="dot" cx="62" cy="68" r="7" fill="#fff" />
+                  <circle class="dot" cx="86" cy="68" r="7" fill="#fff" />
+                  <circle class="dot" cx="110" cy="68" r="7" fill="#fff" />
+                  <g transform="translate(7 9)" fill="#8E97A4">
+                    <path d="M146 160 L158 186 L124 160 Z" />
+                    <rect x="70" y="120" width="106" height="52" rx="22" />
+                  </g>
+                  <path d="M146 160 L158 186 L124 160 Z" fill="#D5DBE6" />
+                  <rect x="70" y="120" width="106" height="52" rx="22" fill="url(#g-white)" />
+                  <path d="M102 146 l11 11 l22 -22" fill="none" stroke="#0A63F5" stroke-width="6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg><i class="print-edge"></i></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="trail-end"><i class="anchor" data-anchor></i></div>
+      </section>
+
+      <!-- ============ CHAMADA FINAL ============ -->
+      <section class="cta-wrap" id="contato">
+        <div class="container">
+          <div class="cta reveal">
+            <h2>Bora tirar sua ideia do papel?</h2>
+            <p>Chame a gente no WhatsApp, conte o que você imaginou e receba um orçamento sem compromisso.</p>
+            <a class="btn btn-white" data-wa="Olá! Tenho uma ideia e gostaria de um orçamento." id="cta-whatsapp">
+              <svg class="ico">
+                <use href="#i-wa" />
+              </svg><span>Chamar no WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#inicio" class="footer-logo" aria-label="FanaticLab 3D"><img src="images/logo-horizontal.png"
+            alt="FanaticLab 3D" width="404" height="74" loading="lazy"></a>
+        <nav class="footer-nav" aria-label="Rodapé">
+          <a href="#produtos">Produtos</a>
+          <a href="#comprar">Onde comprar</a>
+          <a href="#como-funciona">Como funciona</a>
+        </nav>
+        <div class="footer-bottom">
+          <p class="copy">© 2026 FanaticLab 3D. Todos os direitos reservados.</p>
+          <div class="footer-social">
+            <a class="footer-ig" data-wa="Olá! Gostaria de falar com a FanaticLab 3D." aria-label="WhatsApp"><svg
+                class="ico">
+                <use href="#i-wa" />
+              </svg>WhatsApp</a>
+            <a class="footer-ig" href="https://www.instagram.com/fanaticlab3d/" target="_blank" rel="noopener"
+              aria-label="Instagram da FanaticLab 3D"><svg class="ico">
+                <use href="#i-ig" />
+              </svg>Instagram</a>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <!-- ============ RODAPÉ ============ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a href="#inicio" class="footer-logo" aria-label="FanaticLab 3D"><img src="images/logo-horizontal.png" alt="FanaticLab 3D" width="404" height="74" loading="lazy"></a>
-      <nav class="footer-nav" aria-label="Rodapé">
-        <a href="#produtos">Produtos</a>
-        <a href="#comprar">Onde comprar</a>
-        <a href="#como-funciona">Como funciona</a>
-      </nav>
-      <div class="footer-bottom">
-        <p class="copy">© 2026 FanaticLab 3D. Todos os direitos reservados.</p>
-        <div class="footer-social">
-          <a class="footer-ig" data-wa="Olá! Gostaria de falar com a FanaticLab 3D." aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
-          <a class="footer-ig" href="https://www.instagram.com/fanaticlab3d/" target="_blank" rel="noopener" aria-label="Instagram da FanaticLab 3D"><svg class="ico"><use href="#i-ig"/></svg>Instagram</a>
-        </div>
-      </div>
+    <!-- ============ FILAMENTO + BICO (desenha ao rolar) ============ -->
+    <div class="trail" id="trail" aria-hidden="true">
+      <svg id="trail-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="drawn" maskUnits="userSpaceOnUse">
+            <path id="t-mask" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" />
+          </mask>
+          <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#0A63F5" />
+            <stop offset="1" stop-color="#2D86FF" />
+          </linearGradient>
+        </defs>
+        <path id="t-ghost" fill="none" stroke="#D6E0F2" stroke-width="3" stroke-linecap="round"
+          stroke-dasharray="0.1 11" />
+        <g class="tube">
+          <path id="t-line" fill="none" stroke="url(#tube)" stroke-width="12" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path id="t-ticks" fill="none" stroke="#04256B" stroke-opacity=".28" stroke-width="12"
+            stroke-dasharray="1.4 6" mask="url(#drawn)" />
+          <path id="t-shine" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.6" stroke-linecap="round"
+            transform="translate(-2 -2)" />
+        </g>
+      </svg>
+      <img id="nozzle" class="nozzle" src="images/nozzle.png" alt="" width="226" height="520">
     </div>
-  </footer>
 
-  <!-- ============ FILAMENTO + BICO (desenha ao rolar) ============ -->
-  <div class="trail" id="trail" aria-hidden="true">
-    <svg id="trail-svg" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <mask id="drawn" maskUnits="userSpaceOnUse"><path id="t-mask" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/></mask>
-        <linearGradient id="tube" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#0A63F5"/><stop offset="1" stop-color="#2D86FF"/>
-        </linearGradient>
-      </defs>
-      <path id="t-ghost" fill="none" stroke="#D6E0F2" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 11"/>
-      <g class="tube">
-        <path id="t-line" fill="none" stroke="url(#tube)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-        <path id="t-ticks" fill="none" stroke="#04256B" stroke-opacity=".28" stroke-width="12" stroke-dasharray="1.4 6" mask="url(#drawn)"/>
-        <path id="t-shine" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.6" stroke-linecap="round" transform="translate(-2 -2)"/>
-      </g>
-    </svg>
-    <img id="nozzle" class="nozzle" src="images/nozzle.png" alt="" width="226" height="520">
+    <a class="wa-float" data-wa="Olá! Vim pelo site da FanaticLab 3D." id="whatsapp-flutuante"
+      aria-label="Falar no WhatsApp">
+      <svg class="ico">
+        <use href="#i-wa" />
+      </svg>
+    </a>
   </div>
 
-  <a class="wa-float" data-wa="Olá! Vim pelo site da FanaticLab 3D." id="whatsapp-flutuante" aria-label="Falar no WhatsApp">
-    <svg class="ico"><use href="#i-wa"/></svg>
-  </a>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
