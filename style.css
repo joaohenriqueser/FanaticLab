@@ -280,16 +280,10 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.08
 .footer-social { display: flex; align-items: center; gap: 12px; }
 .footer-social a { font-weight: 500; font-size: 14px; color: var(--muted); padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; transition: color .2s, border-color .2s, transform .2s; }
 .footer-social a:hover { color: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
-.footer-info { display: flex; flex-direction: column; gap: 6px; }
-.copy { font-size: 13.5px; color: var(--muted); }
-.footer-legal { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 12px; line-height: 1.5; color: #98a1b0; letter-spacing: .01em; }
-.footer-legal span, .footer-legal a { position: relative; }
-.footer-legal span + span::before, .footer-legal span + a::before {
-  content: ""; position: absolute; left: -8px; top: 50%; width: 3px; height: 3px; margin-top: -1.5px;
-  border-radius: 50%; background: #c3cad6;
-}
-.footer-legal a { text-decoration: none; transition: color .2s; }
-.footer-legal a:hover { color: var(--blue); }
+.footer-info { display: flex; flex-direction: column; gap: 2px; }
+.copy { font-size: 14px; color: var(--muted); }
+.footer-info .copy a { transition: color .2s; }
+.footer-info .copy a:hover { color: var(--blue); }
 .site-footer { padding-bottom: 96px; }
 
 /* ---------- WhatsApp flutuante ---------- */
