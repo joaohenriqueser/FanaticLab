@@ -86,15 +86,21 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.08
 
 .page { position: relative; isolation: isolate; }
 
-/* ---------- Formas geométricas discretas ---------- */
-.deco { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.g { position: absolute; height: auto; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; opacity: .14; animation: drift 15s ease-in-out infinite; }
-.g-fill { fill: var(--blue); stroke: none; opacity: .09; }
-.g-b { animation-duration: 19s; animation-delay: -6s; }
-.g-c { stroke: var(--graphite); opacity: .11; animation-duration: 22s; animation-delay: -11s; }
-.g-d { stroke: var(--blue-dark); opacity: .13; animation-duration: 17s; animation-delay: -4s; animation-direction: reverse; }
-.g-e { opacity: .10; animation-duration: 26s; animation-delay: -13s; }
-@keyframes drift { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(8deg); } }
+/* ---------- Formas geométricas de fundo (geradas no script.js) ---------- */
+.deco { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; --boost: 1; }
+[data-theme="dark"] .deco { --boost: 1.6; }
+.deco-layer { position: absolute; inset: 0; will-change: transform; }
+.g {
+  position: absolute; height: auto; overflow: visible;
+  fill: none; stroke: var(--blue); stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round;
+  opacity: calc(var(--o, .14) * var(--boost));
+  animation: drift var(--dur, 18s) ease-in-out var(--delay, 0s) infinite;
+}
+.g * { vector-effect: non-scaling-stroke; }
+.g-gray { stroke: var(--graphite); }
+.g-fill { fill: var(--blue); stroke: none; }
+.g-rev { animation-direction: reverse; }
+@keyframes drift { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(var(--rise, -14px)) rotate(var(--rot, 8deg)); } }
 .container { width: min(1200px, 100% - 2 * var(--pad)); margin-inline: auto; }
 .ico { width: 20px; height: 20px; flex: none; }
 

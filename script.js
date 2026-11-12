@@ -293,3 +293,136 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
   // Segue o sistema enquanto a pessoa não escolher manualmente
   media.addEventListener('change', (e) => { if (!saved()) apply(e.matches ? 'dark' : 'light'); });
 })();
+
+/* ---------- 7) Formas geométricas de fundo (com profundidade ao rolar) ---------- */
+(() => {
+  const deco = document.getElementById('deco');
+  const page = document.getElementById('page');
+  if (!deco || !page) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const SHAPES = {
+    ring: '<circle cx="20" cy="20" r="16"/>',
+    target: '<circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="7"/>',
+    tri: '<polygon points="20,4 37,34 3,34"/>',
+    hex: '<polygon points="20,4 34,12 34,28 20,36 6,28 6,12"/>',
+    plus: '<path d="M20 6v28M6 20h28"/>',
+    diamond: '<rect x="9" y="9" width="22" height="22" rx="3" transform="rotate(45 20 20)"/>',
+    square: '<rect x="8" y="8" width="24" height="24" rx="3"/>',
+    cube: '<polygon points="20,5 34,13 20,21 6,13"/><polygon points="6,13 20,21 20,35 6,27"/><polygon points="34,13 20,21 20,35 34,27"/>',
+  };
+  const TYPES = Object.keys(SHAPES);
+  const FILLABLE = ['ring', 'tri', 'hex', 'diamond', 'square'];
+
+  /* Camadas: as do fundo andam mais devagar que a página, as da frente um pouco mais rápido */
+  const LAYERS = [{ k: 0.14 }, { k: 0.05 }, { k: -0.05 }];
+
+  // aleatório com semente: o desenho é sempre o mesmo para a mesma tela
+  const seeded = (seed) => () => {
+    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+
+  let layerEls = [];
+  let factors = [0, 0, 0];
+  let lastW = 0, lastH = 0;
+
+  function build() {
+    const W = document.documentElement.clientWidth;
+    const H = page.scrollHeight;
+    const vh = window.innerHeight;
+    const mobile = W < 860;
+    lastW = W; lastH = H;
+
+    const rand = seeded(2026);
+    const between = (a, b) => a + rand() * (b - a);
+    const pick = (arr) => arr[Math.floor(rand() * arr.length)];
+
+    factors = LAYERS.map((l) => (reduceMotion ? 0 : l.k * (mobile ? 0.5 : 1)));
+    const count = Math.min(170, Math.round(H / (mobile ? 170 : 66)));
+    const band = mobile ? 0.14 : 0.17;
+    const placed = [];
+    const html = LAYERS.map(() => []);
+
+    for (let i = 0; i < count; i++) {
+      // tamanho e camada
+      const r = rand();
+      let size, layer, o;
+      if (r < 0.1) { size = between(84, 140); layer = 0; o = between(0.07, 0.1); }
+      else if (r < 0.34) { size = between(40, 68); layer = 1; o = between(0.1, 0.14); }
+      else { size = between(14, 36); layer = rand() < 0.6 ? 2 : 1; o = between(0.13, 0.2); }
+      if (mobile) size *= 0.72;
+
+      // posição: a maioria nas laterais, o resto espalhado
+      let x, y, ok = false;
+      for (let t = 0; t < 14 && !ok; t++) {
+        if (rand() < 0.62) x = rand() < 0.5 ? rand() * band * W : W - rand() * band * W;
+        else x = rand() * W;
+        y = between(30, H - 30);
+        ok = placed.every((p) => Math.hypot(p.x - x, p.y - y) > (p.s + size) / 2 + (mobile ? 26 : 38));
+      }
+      if (!ok) continue;
+      placed.push({ x, y, s: size });
+
+      const type = pick(TYPES);
+      const k = factors[layer];
+      const top = y - k * (y - vh / 2);   // compensa a profundidade: aparece no lugar certo ao passar
+      const cls = ['g'];
+      if (size < 40 && FILLABLE.includes(type) && rand() < 0.18) { cls.push('g-fill'); o *= 0.65; }
+      else if (rand() < 0.22) cls.push('g-gray');
+      if (rand() < 0.4) cls.push('g-rev');
+
+      const big = size > 80;
+      const style = [
+        `left:${(x - size / 2).toFixed(0)}px`,
+        `top:${(top - size / 2).toFixed(0)}px`,
+        `width:${size.toFixed(0)}px`,
+        `--o:${o.toFixed(3)}`,
+        `--dur:${between(big ? 24 : 14, big ? 34 : 26).toFixed(1)}s`,
+        `--delay:${(-rand() * 30).toFixed(1)}s`,
+        `--rot:${(big ? between(-5, 5) : between(-14, 14)).toFixed(1)}deg`,
+        `--rise:${(-between(big ? 8 : 10, big ? 14 : 20)).toFixed(0)}px`,
+      ].join(';');
+      const turn = Math.round(rand() * 360);
+      html[layer].push(
+        `<svg class="${cls.join(' ')}" viewBox="0 0 40 40" style="${style}"><g transform="rotate(${turn} 20 20)">${SHAPES[type]}</g></svg>`
+      );
+    }
+
+    deco.innerHTML = html.map((items) => `<div class="deco-layer">${items.join('')}</div>`).join('');
+    layerEls = [...deco.children];
+    parallax();
+  }
+
+  function parallax() {
+    const y = window.scrollY;
+    layerEls.forEach((el, i) => {
+      el.style.transform = factors[i] ? `translate3d(0, ${(y * factors[i]).toFixed(1)}px, 0)` : '';
+    });
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { parallax(); ticking = false; });
+  }, { passive: true });
+
+  let timer;
+  const rebuild = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const W = document.documentElement.clientWidth;
+      const H = page.scrollHeight;
+      if (W !== lastW || Math.abs(H - lastH) > 60) build();
+    }, 200);
+  };
+
+  build();
+  window.addEventListener('resize', rebuild);
+  window.addEventListener('load', rebuild);
+  if ('ResizeObserver' in window) new ResizeObserver(rebuild).observe(page);
+})();
