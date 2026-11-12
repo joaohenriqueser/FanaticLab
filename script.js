@@ -262,3 +262,34 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
   }
   setTimeout(tick, 2600);
 })();
+
+/* ---------- 6) Modo claro / escuro ---------- */
+(() => {
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  if (!btn) return;
+
+  const saved = () => { try { return localStorage.getItem('theme'); } catch (e) { return null; } };
+
+  function apply(theme) {
+    root.dataset.theme = theme;
+    if (meta) meta.content = theme === 'dark' ? '#0d1117' : '#ffffff';
+    btn.setAttribute('aria-pressed', theme === 'dark');
+    btn.title = theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro';
+  }
+
+  apply(root.dataset.theme === 'dark' ? 'dark' : 'light');
+
+  btn.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.classList.add('theme-anim');
+    apply(next);
+    try { localStorage.setItem('theme', next); } catch (e) { }
+    setTimeout(() => root.classList.remove('theme-anim'), 450);
+  });
+
+  // Segue o sistema enquanto a pessoa não escolher manualmente
+  media.addEventListener('change', (e) => { if (!saved()) apply(e.matches ? 'dark' : 'light'); });
+})();
