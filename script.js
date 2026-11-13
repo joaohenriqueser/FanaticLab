@@ -263,15 +263,14 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
   setTimeout(tick, 2600);
 })();
 
-/* ---------- 6) Modo claro / escuro ---------- */
+/* ---------- 6) Modo claro / escuro (modo claro como padrão) ---------- */
 (() => {
   const root = document.documentElement;
   const btn = document.getElementById('theme-toggle');
   const meta = document.querySelector('meta[name="theme-color"]');
-  const media = window.matchMedia('(prefers-color-scheme: dark)');
   if (!btn) return;
 
-  const saved = () => { try { return localStorage.getItem('theme'); } catch (e) { return null; } };
+  try { localStorage.removeItem('theme'); } catch (e) { }
 
   function apply(theme) {
     root.dataset.theme = theme;
@@ -286,12 +285,9 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
     root.classList.add('theme-anim');
     apply(next);
-    try { localStorage.setItem('theme', next); } catch (e) { }
+    try { localStorage.setItem('fanaticlab-theme', next); } catch (e) { }
     setTimeout(() => root.classList.remove('theme-anim'), 450);
   });
-
-  // Segue o sistema enquanto a pessoa não escolher manualmente
-  media.addEventListener('change', (e) => { if (!saved()) apply(e.matches ? 'dark' : 'light'); });
 })();
 
 /* ---------- 7) Formas geométricas de fundo (com profundidade ao rolar) ---------- */
@@ -356,11 +352,13 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
       else { size = between(14, 36); layer = rand() < 0.6 ? 2 : 1; o = between(0.13, 0.2); }
       if (mobile) size *= 0.72;
 
-      // posição: a maioria nas laterais, o resto espalhado
+      // posição: a maioria nas laterais, o resto espalhado (sempre dentro da largura da tela)
+      const padX = size / 2 + 4;
       let x, y, ok = false;
       for (let t = 0; t < 14 && !ok; t++) {
-        if (rand() < 0.62) x = rand() < 0.5 ? rand() * band * W : W - rand() * band * W;
-        else x = rand() * W;
+        if (rand() < 0.62) x = rand() < 0.5 ? padX + rand() * band * W : W - padX - rand() * band * W;
+        else x = between(padX, W - padX);
+        x = Math.max(padX, Math.min(W - padX, x));
         y = between(30, H - 30);
         ok = placed.every((p) => Math.hypot(p.x - x, p.y - y) > (p.s + size) / 2 + (mobile ? 26 : 38));
       }

@@ -22,11 +22,10 @@
   <link rel="stylesheet" href="style.css">
   <script>
     document.documentElement.classList.add('js');
-    /* Tema: aplica antes de desenhar a página para não piscar */
+    /* Tema: modo claro como padrão; escuro só se a pessoa ativar */
     (function () {
-      var t = null;
-      try { t = localStorage.getItem('theme'); } catch (e) { }
-      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var t = 'light';
+      try { if (localStorage.getItem('fanaticlab-theme') === 'dark') t = 'dark'; } catch (e) { }
       document.documentElement.dataset.theme = t;
       document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#0d1117' : '#ffffff';
     })();
