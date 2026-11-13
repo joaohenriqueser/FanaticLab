@@ -385,7 +385,8 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.08
   body { font-size: 16.5px; }
   :root { --header-h: 64px; }
   .container, .hero-grid { width: calc(100% - 72px); margin-left: 54px; margin-right: 18px; }
-  .header-inner { width: calc(100% - 36px); margin-inline: 18px; gap: 12px; }
+  .header-inner, .cta-wrap .container, .footer-inner { width: calc(100% - 36px); margin-inline: auto; }
+  .header-inner { gap: 12px; }
   .nav { display: none; }
   .brand { gap: 10px; min-width: 0; }
   .brand-mark { height: 34px; }
@@ -413,9 +414,12 @@ h1, h2, h3 { font-family: var(--font-head); color: var(--ink); line-height: 1.08
   .cta { border-radius: 32px; }
   .btn-white { padding: 16px 24px; font-size: 16px; }
 
-  .footer-inner { grid-template-columns: 1fr; justify-items: start; }
-  .footer-nav { justify-content: flex-start; }
-  .footer-logo img { height: 64px; }
+  .footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .footer-nav { justify-content: center; }
+  .footer-logo img { height: 60px; margin-inline: auto; }
+  .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+  .footer-info { align-items: center; }
+  .footer-social { justify-content: center; }
 
   .nozzle { height: 96px; }
   #t-line, #t-ticks { stroke-width: 8px; }
